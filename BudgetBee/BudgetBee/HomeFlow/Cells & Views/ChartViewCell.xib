@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="ChartViewCell" customModule="BudgetBee" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="323" height="392"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="323" height="392"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hYA-JO-2Tf">
+                        <rect key="frame" x="10" y="15" width="303" height="367"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="UN8-45-S8z">
+                                <rect key="frame" x="10" y="15" width="283" height="45"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VHg-FD-cAQ">
+                                        <rect key="frame" x="0.0" y="0.0" width="87.666666666666671" height="45"/>
+                                        <color key="tintColor" red="0.81960784313725488" green="0.83529411764705885" blue="0.85882352941176465" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Daily"/>
+                                        <connections>
+                                            <action selector="dailyBtnAction:" destination="gTV-IL-0wX" eventType="touchUpInside" id="ilm-XE-4ay"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s5S-af-ReK">
+                                        <rect key="frame" x="97.666666666666657" y="0.0" width="87.666666666666657" height="45"/>
+                                        <color key="backgroundColor" red="0.81960784313725488" green="0.83529411764705885" blue="0.85882352941176465" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="tintColor" red="0.21568627450980393" green="0.25490196078431371" blue="0.31764705882352939" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Weekly"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornurRadius">
+                                                <real key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="weeklyBtnAction:" destination="gTV-IL-0wX" eventType="touchUpInside" id="VS2-qt-pbY"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ge4-JA-Y4C">
+                                        <rect key="frame" x="195.33333333333334" y="0.0" width="87.666666666666657" height="45"/>
+                                        <color key="tintColor" red="0.81960784313725488" green="0.83529411764705885" blue="0.85882352941176465" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Monthly"/>
+                                        <connections>
+                                            <action selector="monthlyBtnAction:" destination="gTV-IL-0wX" eventType="touchUpInside" id="G25-eA-hxZ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="Nk8-qk-HtA"/>
+                                </constraints>
+                            </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dQR-3n-dFp" customClass="FLChart" customModule="FLCharts">
+                                <rect key="frame" x="10" y="70" width="283" height="287"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="dQR-3n-dFp" firstAttribute="leading" secondItem="hYA-JO-2Tf" secondAttribute="leading" constant="10" id="FbH-LW-ybG"/>
+                            <constraint firstItem="UN8-45-S8z" firstAttribute="top" secondItem="hYA-JO-2Tf" secondAttribute="top" constant="15" id="JnV-Yo-Mug"/>
+                            <constraint firstItem="dQR-3n-dFp" firstAttribute="top" secondItem="UN8-45-S8z" secondAttribute="bottom" constant="10" id="K2h-1Z-rJP"/>
+                            <constraint firstAttribute="trailing" secondItem="UN8-45-S8z" secondAttribute="trailing" constant="10" id="i2W-LJ-gTi"/>
+                            <constraint firstItem="UN8-45-S8z" firstAttribute="leading" secondItem="hYA-JO-2Tf" secondAttribute="leading" constant="10" id="uu9-a9-Et9"/>
+                            <constraint firstAttribute="trailing" secondItem="dQR-3n-dFp" secondAttribute="trailing" constant="10" id="vV7-Hz-ar2"/>
+                            <constraint firstAttribute="bottom" secondItem="dQR-3n-dFp" secondAttribute="bottom" constant="10" id="w0b-TP-MH4"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornurRadius">
+                                <real key="value" value="10"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                <real key="value" value="0.59999999999999998"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                <real key="value" value="0.59999999999999998"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                <size key="value" width="0.59999999999999998" height="0.59999999999999998"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="hYA-JO-2Tf" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="15" id="0Ut-qO-x5g"/>
+                <constraint firstAttribute="trailing" secondItem="hYA-JO-2Tf" secondAttribute="trailing" constant="10" id="2OP-E0-PH7"/>
+                <constraint firstItem="hYA-JO-2Tf" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="Tz7-9v-cP9"/>
+                <constraint firstAttribute="bottom" secondItem="hYA-JO-2Tf" secondAttribute="bottom" constant="10" id="peS-cp-nyR"/>
+            </constraints>
+            <size key="customSize" width="323" height="392"/>
+            <connections>
+                <outlet property="chartView" destination="dQR-3n-dFp" id="MO0-Cw-Ejd"/>
+                <outlet property="dailyBtn" destination="VHg-FD-cAQ" id="CPm-bR-TEI"/>
+                <outlet property="monthlyBtn" destination="Ge4-JA-Y4C" id="cC3-ea-IsK"/>
+                <outlet property="weeklyBtn" destination="s5S-af-ReK" id="nvM-D4-YLT"/>
+            </connections>
+            <point key="canvasLocation" x="225.19083969465649" y="140.14084507042253"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
